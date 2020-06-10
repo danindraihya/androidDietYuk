@@ -42,9 +42,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class KenaikanFragment extends Fragment {
+    public static ArrayList<Entry> dataVals = new ArrayList<Entry>();
     SharedPreferences sharedPreferences;
     Integer id;
     private LineChart mChart;
+    private static Integer day = 0;
 
     @Nullable
     @Override
@@ -67,7 +69,7 @@ public class KenaikanFragment extends Fragment {
 
         mChart.setDrawGridBackground(true);
         mChart.setBackgroundColor(Color.GRAY);
-        LineDataSet lineDataSet = new LineDataSet(dataValues(), "Data set 1");
+        LineDataSet lineDataSet = new LineDataSet(dataVals, "Data set 1");
 
         lineDataSet.setLineWidth(3);
         lineDataSet.setColor(Color.RED);
@@ -85,14 +87,8 @@ public class KenaikanFragment extends Fragment {
 
     }
 
-    private ArrayList<Entry> dataValues(){
-        ArrayList<Entry> dataVals = new ArrayList<Entry>();
-        dataVals.add(new Entry(0, 20));
-        dataVals.add(new Entry(1, 24));
-        dataVals.add(new Entry(2, 2));
-        dataVals.add(new Entry(3, 10));
-        dataVals.add(new Entry(4, 40));
-
-        return dataVals;
+    public void addValues(Integer hari, Integer kalori){
+        day++;
+        dataVals.add(new Entry(hari, kalori));
     }
 }

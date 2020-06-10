@@ -146,11 +146,11 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_above="@+id/btnMulai"
+        android:layout_above="@+id/btnSelesai"
         android:background="#000"/>
 
     <Button
-        android:id="@+id/btnMulai"
+        android:id="@+id/btnSelesai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
